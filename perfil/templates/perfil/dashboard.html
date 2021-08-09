@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block conteudo%}
+
+<h1>Ola {{user.first_name}}</h1>
+
+ <div>
+     <h3>Faca seus requirimentos aqui</h3>
+    <p>Escolha seu requirimento</p>
+    <form method="POST" action="{% url 'dashboard'%}">
+        <input type="text-area" name='requirimento' class="form-control"  value ="{{request.POST.requirimento}}">
+
+    </form>
+
+
+
+ </div>
+
+{%endblock%}
