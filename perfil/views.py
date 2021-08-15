@@ -98,6 +98,7 @@ def login(request):
         return redirect('dashboard')
 
 def logout(request):
+    
     auth.logout(request)
     return redirect('login')
 

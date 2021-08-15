@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{%block nav%}
+    
+
+
+{%endblock%}
 {%block conteudo%}
 <div class="container">
     <div class="row">
@@ -13,17 +18,23 @@
               <th>Sobrenome</th>
               <th>Telefone</th>
               <th>Categoria</th>
+              <th>Email</th>
             </tr>
           </thead>
           <tbody>
             {% for contato in contatos%}
             <tr>
               <td>
-                <a href="#"> {{contato.nome}}</a>
+                {{contato.nome}}
               </td>
               <td>{{contato.sobrenome}}</td>
               <td>{{contato.telefone}}</td>
               <td>{{contato.categoria}}</td>
+              {% if contato.email %}
+                <td>{{contato.email}}</td>
+              {%else%}
+                <td>Nenhum</td>
+              {%endif%}
             </tr>
             {%endfor%}
             
@@ -35,11 +46,12 @@
     </div>
   </div>
 
+
+
+
+
   
   {% include 'parciais/_pagination.html'%}
-    
-        
-
 
 
 {%endblock%}

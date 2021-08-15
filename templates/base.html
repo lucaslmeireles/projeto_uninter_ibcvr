@@ -18,13 +18,13 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top" style="background: #63A375;">
     <div class="container">
-      <a class="navbar-brand" href="#">Agenda</a>    
-     <button type="button" class="btn btn-primary" href="#" role="button">
-      Logout
-      </button>
+      <a class="navbar-brand" href="{% url 'index'%}">Agenda</a>
+
+      <a class="navbar-brand" style="background: #3F7CAC; border-radius: 15px; padding: 8px;" href="{%url 'logout'%}">Logout</a>
     </div>
+
   </nav>
 
   <!-- Page Content -->
