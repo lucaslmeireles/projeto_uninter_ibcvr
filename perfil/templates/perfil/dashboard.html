@@ -2,17 +2,5 @@
 
 {%block conteudo%}
 
-<h1 style="padding-left: 15px;">Olá {{user.username}}</h1>
-
- <div style="padding-top: 30px;padding-left: 15px;">
-     <h3>Faça seus requirimentos aqui</h3>
-    <p>Escolha seu requerimento</p>
-    <form method="POST" action="{% url 'dashboard'%}">
-        <input type="text-area" name='requerimento' class="form-control"  value ="{{request.POST.requirimento}}">
-
-    </form>
- </div>
-
- <button type="button" class="btn btn-primary" href="{%url 'index'%}">Agenda</button>
 
 {%endblock%}

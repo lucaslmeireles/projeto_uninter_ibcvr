@@ -91,21 +91,15 @@ def login(request):
         return render(request, 'perfil/login.html')
     else:
         auth.login(request, user)
-        messages.success(
-            request,
-            'Voce fez Login'
-        )
-        return redirect('dashboard')
+        return redirect('index')
 
 def logout(request):
     
     auth.logout(request)
+    
     return redirect('login')
 
 
-@login_required(redirect_field_name='login')
-def dashboard(request):
-    return render(request, 'perfil/dashboard.html')
 
 
 def requerimentos(request):

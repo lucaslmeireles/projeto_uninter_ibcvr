@@ -2,8 +2,9 @@
 {% load static %}
 {%block nav%}
     
-
-
+{%block btnlogout%}
+<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">Logout</a>
+{%endblock%}
 {%endblock%}
 {%block conteudo%}
 <div class="container">
