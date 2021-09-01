@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+{%block conteudo %}
+<style>
+    .card-group{
+        display: flex;
+    }
+</style>
+<div class="card-group">
+    <div class="card bg-light mb-3" style="max-width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">Preencha as informações abaixo</h5>
+            <form action="{% url 'adicionar'%}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="none">None</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <label for="sobrenone">Sobrenone</label>
+                    <input type="text" class="form-control" name="sobrenome" placeholder="Sobenome">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" placeholder="(0xx)000000000">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <input type="radio" class="form-control" name="categoria"  placeholder="Email">
+                </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </form>        
+        </div>
+</div>
+    
+  <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Info Panel title</h5>
+      <p class="card-text text-white">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Danger Panel title</h5>
+      <p class="card-text text-white">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+    </div>
+  </div>
+
+</div>
+{%endblock%}

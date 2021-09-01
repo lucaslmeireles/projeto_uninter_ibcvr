@@ -102,6 +102,3 @@ def logout(request):
 
 
 
-def requerimentos(request):
-    
-    return render(request, 'perfil/dashboard.html')

@@ -16,3 +16,15 @@ class PagInicial(LoginRequiredMixin, ListView):
     context_object_name = 'contatos'
     paginate_by = 10
     
+def adicionacontato(request):
+    if request.method != 'POST':
+        return render(request, 'contatos/adicionarcontato.html')
+
+    nome = request.POST.get('nome')
+    sobrenome = request.POST.get('sobrenome')
+    telefone = request.POST.get('telefone')
+    email = request.POST.get('email')
+
+    print(nome, sobrenome)
+
+    return render(request, 'contatos/adicionarcontato.html')
