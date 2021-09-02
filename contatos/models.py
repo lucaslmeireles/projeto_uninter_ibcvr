@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 class Categoria(models.Model):
@@ -19,3 +20,9 @@ class Contato(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class ContatoForm(ModelForm):
+    class Meta:
+        model = Contato
+        exclude = ('data_nascimento', 'foto')
