@@ -1,5 +1,13 @@
 {% extends 'base.html'%}
 
+{%block nav%}
+    
+{%block btnlogout%}
+<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">Logout</a>
+{%endblock%}
+
+{%endblock%}
+
 {%block conteudo %}
 <style>
     .card-group{
@@ -10,13 +18,14 @@
     }
 </style>
 <div class="card-group">
-    <div class="card bg-light mb-3" style="max-width: 40rem;">
+    <div class="card bg-light mb-3" style="max-width: 85rem;">
         <div class="card-body">
-          <h5 class="card-title">Preencha as informações abaixo</h5>
+          <h5 class="card-title">Cadastre um novo contato:</h5>
             <form action="{% url 'adicionar'%}" method="POST">
                 {% csrf_token %}
+                {% include 'parciais/_messages.html'%}
                 <div class="form-group">
-                    <label for="none">None</label>
+                    <label for="none">Nome</label>
                     <input type="text" class="form-control" name="nome" placeholder="Nome">
                 </div>
                 <div class="form-group">
@@ -32,40 +41,16 @@
                     <label for="exampleInputEmail1">Email</label>
                     <input type="email" class="form-control" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
-                <!-- <div class="form-group" >
-                    <label for="categoria">Categoria</label>
-                    <input type="radio" class="form-control brutal"  name="categoria"  value="2">
-                    <label for="categoria">Professor(a)</label>
-                    <input type="radio" class="form-control brutal" name="categoria"  value="3">
-                    <label for="categoria">Coordenador(a)</label>
-                </div> -->
                 <div class="form-group">
-                  <label >Example select</label>
+                  <label >Categoria</label>
                   <select class="form-control" name="categoria">
                     <option value="2">Professor</option>
-                    <option value="3">Coordenador</option>
+                    <option value="1">Coordenador</option>
                     
                   </select>
                 </div>
                   <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>        
         </div>
-</div>
-    
-  <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h5 class="card-title">Info Panel title</h5>
-      <p class="card-text text-white">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-    </div>
-  </div>
-  <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h5 class="card-title">Danger Panel title</h5>
-      <p class="card-text text-white">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-    </div>
-  </div>
-
 </div>
 {%endblock%}
