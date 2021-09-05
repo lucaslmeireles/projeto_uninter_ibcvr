@@ -1,6 +1,6 @@
 from django.core.validators import validate_email
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from .models import Categoria, Contato
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -98,7 +98,7 @@ def enviaemail(request):
 
     # )
 
-    #TODO  COMO FAZER ESSE NEGOCIO EXIBER UM VALOR BONITINHO DE CADA VEZ
+    #TODO  COMO FAZER ESSE NEGOCIO EXIBiR UM VALOR BONITINHO DE CADA VEZ
     messages.warning(
         request,
         'Não foi possivel enviar a mensagem para todo os contatos'

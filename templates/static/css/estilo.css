@@ -5,14 +5,25 @@
 
 body {
     font-family: 'Robot', sans-serif;
+    background:
+    linear-gradient(0deg, rgba(151, 151, 151, 0.5), rgba(151, 151, 151, 0.5)),
+    url('imginicio.jpg');
+    background-size: 100%;
 
 }
 
 .nav-container {
     background: #6CCB6A;
-    height: 45px;
+    height: 55px;
 }
-
+.logo{
+    padding:0px;
+    margin: 0px;
+}
+#imagem{
+    top: 0px;
+    padding-bottom: 15px;
+}
 .wrapper {
     width: 1200px;
     margin: 0 auto;
@@ -47,10 +58,8 @@ nav ul{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
-
 .header-container {
 
-    background-image: "icons/inicial.jpg";
     align-items: center;
 }
 
@@ -58,9 +67,6 @@ nav ul{
 
 .body-image{
     display: flex;
-    background-color: #E5EAFA;
-    width: 1366px;
-    height: 580px;
 
 }
 .body-content{
@@ -68,16 +74,37 @@ nav ul{
     top: 300px;
     left: 425px;
 }
+
+@keyframes texto{
+    from{
+        font-size: 0px;
+    }
+    to{
+        font-size: 43px;
+    }
+}
+@keyframes texto1{
+    from{
+        color: #E5EAFA;
+    }
+    to{
+        color: #b9c4e6;
+    }
+}
 .body-heading{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 43px;
     color: #093824;
     text-align: center;
+    animation: texto 3s   ;
 }
+
+
 .body-subtitle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    color: #747578;
+    color: #b9c4e6;
     text-align: center;
-}
+    animation: texto1 3s   ;
 
+}

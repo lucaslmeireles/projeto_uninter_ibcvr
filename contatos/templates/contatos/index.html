@@ -3,7 +3,8 @@
 {%block nav%}
     
 {%block btnlogout%}
-<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">Logout</a>
+<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">
+  <img src="{% static 'img/logout.png'%}" width= 35 alt=""> Sair</a>
 {%endblock%}
 
 {%endblock%}

@@ -1,11 +1,15 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {%block nav%}
-    
-{%block btnlogout%}
-<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">Logout</a>
-{%endblock%}
 
+{%block agenda%}
+<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'index'%}">
+<img src="{%static 'img/setavoltar.png' %}" width= 35 alt="Botão de voltar"></a>
+{%endblock%}
+{%block btnlogout%}
+<a class="navbar-brand" style="text-shadow: 2px;" href="{%url 'logout'%}">
+  <img src="{% static 'img/logout.png'%}" width= 35 alt=""> Sair</a>
+{%endblock%}
 {%endblock%}
 
 {%block conteudo %}
@@ -44,8 +48,9 @@
                 <div class="form-group">
                   <label >Categoria</label>
                   <select class="form-control" name="categoria">
-                    <option value="2">Professor</option>
-                    <option value="1">Coordenador</option>
+                    <option value="2">Professor(a)</option>
+                    <option value="3">Coordenador(a)</option>
+                    <option value="4">Pastor</option>
                     
                   </select>
                 </div>
@@ -63,8 +68,8 @@
                       <input type="text" class="form-control" name="assunto" placeholder="Assunto">
                   </div>
                   <div class="form-group">
-                      <label for="destinatarios">Destinatarios</label>
-                      <input type="text" class="form-control" name="destinatarios" placeholder="destinatarios">
+                      <label for="destinatarios">Destinatários</label>
+                      <input type="text" class="form-control" name="destinatarios" placeholder="Destinatários">
                   </div>
   
                   <div class="form-group">
