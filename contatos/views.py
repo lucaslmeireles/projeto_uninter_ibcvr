@@ -1,9 +1,11 @@
 from django.core.validators import validate_email
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from .models import Categoria, Contato
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.core.mail import EmailMessage
 
 
 # Create your views here.
@@ -32,7 +34,14 @@ def adicionacontato(request):
     telefone = request.POST.get('telefone')
     email = request.POST.get('email')
     categoria = request.POST.get('categoria')
-    #TODO Pesquisar como colocar o numero de contatos cadastrados, e usuarios 
+    #TODO Pesquisar como colocar o numero de contatos cadastrados, e usuarios
+    # testar essa solucao 
+    # i=0
+    # for contato in Contato.objects.all():
+    #     i += 1
+    # for user in User.objects.all():
+    #     i += 1
+
 
 
     if len(telefone)< 9:
@@ -56,6 +65,46 @@ def adicionacontato(request):
             request,
             'Contato adicionado com sucesso'
         )
+
+
+    return render(request, 'contatos/adicionarcontato.html')
+
+def enviaemail(request):
+    if request.method != 'POST':
+        return render(request, 'contatos/adicionarcontato.html')
+
+    email_contato = []
+    nao_tem_email = []
+    for contato in Contato.objects.all():
+        if contato.email:
+            email_contato.append(contato.email)
+        else:
+            nao_tem_email.append(contato.nome)
+    
+
+    assunto = request.POST.get('assunto')
+    mensagem = request.POST.get('mensagem')
+    destinatarios = request.POST.get('destinatarios')
+    arquivos = request.POST.get('arquivos')
+
+    #TODO AQUI TEM MAIS COISAS COMO UMA VERIFICACAO, TBM PRECISA PREVINIR BADHEAD
+    # E LOGICO TESTAR TUDO
+    # email = EmailMessage(
+    #     subject=assunto,
+    #     message=mensagem,
+    #     # default email,
+    #     to=['lluciomeireles@gmail.com'], #email_contato
+    #     attachments=arquivos
+
+    # )
+
+    #TODO  COMO FAZER ESSE NEGOCIO EXIBER UM VALOR BONITINHO DE CADA VEZ
+    messages.warning(
+        request,
+        'Não foi possivel enviar a mensagem para todo os contatos'
+        f'Contatos sem email {nao_tem_email}'
+    )
+
 
 
     return render(request, 'contatos/adicionarcontato.html')

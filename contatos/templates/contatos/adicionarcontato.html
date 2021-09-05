@@ -38,8 +38,8 @@
                     <input type="text" class="form-control" name="telefone" placeholder="(0xx)000000000">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label >Categoria</label>
@@ -52,5 +52,32 @@
                   <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>        
         </div>
+        <div class="card bg-light mb-3" style="max-width: 85rem;">
+          <div class="card-body">
+            <h5 class="card-title">Envie um email:</h5>
+              <form action="{% url 'enviaemail'%}" method="POST">
+                  {% csrf_token %}
+                  {% include 'parciais/_messages.html'%}
+                  <div class="form-group">
+                      <label for="assunto">Assunto</label>
+                      <input type="text" class="form-control" name="assunto" placeholder="Assunto">
+                  </div>
+                  <div class="form-group">
+                      <label for="destinatarios">Destinatarios</label>
+                      <input type="text" class="form-control" name="destinatarios" placeholder="destinatarios">
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea name="mensagem" id="mensagem" cols="100" rows="4"></textarea>  
+                    </div>
+                  <div class="form-group">
+                      <label for="file">Arquivos: </label>
+                      <input type="file" class="form-control" name="file" aria-describedby="emailHelp" placeholder="Email">
+                  </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>        
+          </div>
+  
 </div>
 {%endblock%}
