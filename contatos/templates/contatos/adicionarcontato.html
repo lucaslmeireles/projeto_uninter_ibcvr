@@ -59,10 +59,12 @@
         </div>
         <div class="card bg-light mb-3" style="max-width: 85rem;">
           <div class="card-body">
+            {% if user.is_superuser %}
             <h5 class="card-title">Envie um email:</h5>
               <form action="{% url 'enviaemail'%}" method="POST">
                   {% csrf_token %}
                   {% include 'parciais/_messages.html'%}
+                  
                   <div class="form-group">
                       <label for="assunto">Assunto</label>
                       <input type="text" class="form-control" name="assunto" placeholder="Assunto">
@@ -71,9 +73,8 @@
                       <label for="destinatarios">Destinatários</label>
                       <input type="text" class="form-control" name="destinatarios" placeholder="Destinatários">
                   </div>
-  
+                  <label for="mensagem">Mensagem:</label>
                   <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
                     <textarea name="mensagem" id="mensagem" cols="100" rows="4"></textarea>  
                     </div>
                   <div class="form-group">
@@ -81,6 +82,7 @@
                       <input type="file" class="form-control" name="file" aria-describedby="emailHelp" placeholder="Email">
                   </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
+                    {% endif %}
               </form>        
           </div>
   

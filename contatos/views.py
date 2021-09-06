@@ -1,11 +1,11 @@
 from django.core.validators import validate_email
-from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from .models import Categoria, Contato
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.core.mail import EmailMessage
+from agenda import settings
 
 
 # Create your views here.
@@ -85,18 +85,31 @@ def enviaemail(request):
     assunto = request.POST.get('assunto')
     mensagem = request.POST.get('mensagem')
     destinatarios = request.POST.get('destinatarios')
-    arquivos = request.POST.get('arquivos')
+    arquivos = request.FILES.get('arquivos')
 
+    if not assunto or not mensagem:
+        messages.error(
+            request,
+            'Seu email é invalido'
+        )
+        return render(request, 'contatos/adicionarcontato.html')
+    
     #TODO AQUI TEM MAIS COISAS COMO UMA VERIFICACAO, TBM PRECISA PREVINIR BADHEAD
     # E LOGICO TESTAR TUDO
-    # email = EmailMessage(
-    #     subject=assunto,
-    #     message=mensagem,
-    #     # default email,
-    #     to=['lluciomeireles@gmail.com'], #email_contato
-    #     attachments=arquivos
+    email = EmailMessage(
+        subject=assunto,
+        body=mensagem,
+        from_email=settings.EMAIL_HOST_USER,
+        to=['lluciomeireles@gmail.com', 'llmeireles0015@gmail.com', 'acrmeireles@hotmail.com', 'mnlmeireles@hotmail.com']
+    )
+        
 
-    # )
+
+    if arquivos:
+        email.attach_file(arquivos)
+    
+    email.send()
+    messages.success(request, 'Email enviado')
 
     #TODO  COMO FAZER ESSE NEGOCIO EXIBiR UM VALOR BONITINHO DE CADA VEZ
     messages.warning(
