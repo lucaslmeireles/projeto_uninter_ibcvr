@@ -77,7 +77,7 @@ nav ul{
 
 @keyframes texto{
     from{
-        font-size: 0px;
+        font-size: 26px;
     }
     to{
         font-size: 43px;
