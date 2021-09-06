@@ -29,7 +29,7 @@ def cadastro(request):
     except:
         messages.error(
             request,
-            'Email invalido'
+            'Email inválido'
         )
         return render(request, 'perfil/cadastro.html')
     if len(senha) < 6:
@@ -42,20 +42,20 @@ def cadastro(request):
     if senha != senha2:
         messages.error(
             request,
-            'As senhas nao coincidem'
+            'As senhas não coincidem'
         )
         return render(request, 'perfil/cadastro.html')
 
     if len(usuario) <6:
         messages.error(
             request,
-            'O usuario deve ter mais de 6 caracteres'
+            'O usuário deve ter mais de 6 caracteres'
         )
         return render(request, 'perfil/cadastro.html')
     if User.objects.filter(username=usuario).exists():
         messages.error(
             request,
-            'O usuario já existe'
+            'O usuário já existe'
         )
         return render(request, 'perfil/cadastro.html')
     if User.objects.filter(email=email).exists():
@@ -67,7 +67,7 @@ def cadastro(request):
 
     messages.success(
             request,
-            'Usuario cadastrado com sucesso, faça login'
+            'Usuário cadastrado com sucesso, faça login'
         )
     user = User.objects.create_user(username=usuario, email=email, password=senha, 
     first_name=nome, last_name=sobrenome)
@@ -86,7 +86,7 @@ def login(request):
     if not user:
         messages.error(
             request,
-            'Usuario ou senha invalidos'
+            'Usuário ou senha inválidos'
         )
         return render(request, 'perfil/login.html')
     else:

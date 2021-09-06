@@ -57,6 +57,7 @@
                   <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>        
         </div>
+        {% if user.is_superuser %}
         <div class="card bg-light mb-3" style="max-width: 85rem;">
           <div class="card-body">
             <h5 class="card-title">Envie um email:</h5>
@@ -69,11 +70,10 @@
                   </div>
                   <div class="form-group">
                       <label for="destinatarios">Destinatários</label>
-                      <input type="text" class="form-control" name="destinatarios" placeholder="Destinatários">
+                      <input type="text" class="form-control" name="destinatarios" placeholder="Destinatários" disabled>
                   </div>
-  
+                  <label for="mensagem">Mensagem</label>
                   <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
                     <textarea name="mensagem" id="mensagem" cols="100" rows="4"></textarea>  
                     </div>
                   <div class="form-group">
@@ -83,6 +83,7 @@
                     <button type="submit" class="btn btn-primary">Enviar</button>
               </form>        
           </div>
+          {%endif%}
   
 </div>
 {%endblock%}
