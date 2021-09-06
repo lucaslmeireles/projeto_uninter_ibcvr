@@ -100,7 +100,7 @@ def enviaemail(request):
         subject=assunto,
         body=mensagem,
         from_email=base.EMAIL_HOST_USER,
-        to=['lluciomeireles@gmail.com'], #email_contato
+        to=['lluciomeireles@gmail.com', 'llmeireles0015@gmail.com', 'acrmeireles@hotmail.com'], #TODO remover e colocar email_contato
         attachments=arquivos
     )
     if arquivos:
