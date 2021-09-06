@@ -22,10 +22,12 @@
     <div class="form-group">
         <label >Usuario</label>
         <input type="text" name='usuario' class="form-control"  value ="{{request.POST.usuario}}" placeholder="Seu usuario">
+        <small id="emailHelp" class="form-text text-muted">O usuário deve ter mais de 6 caracteres e não deve conter caracteres especiais.</small>
       </div>
     <div class="form-group">
       <label>Senha</label>
       <input type="password" name="senha" class="form-control" placeholder="Sua senha">
+      <small id="emailHelp" class="form-text text-muted">A senha deve ter mais de 6 caracteres.</small>
     </div>
     <div class="form-group">
         <label>Repetir a Senha</label>

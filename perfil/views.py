@@ -52,6 +52,13 @@ def cadastro(request):
             'O usuário deve ter mais de 6 caracteres'
         )
         return render(request, 'perfil/cadastro.html')
+    if usuario.isascii():
+        messages.error(
+            request,
+            'O usuário não pode conter caractres especiais'
+        )
+        return render(request, 'perfil/cadastro.html')
+
     if User.objects.filter(username=usuario).exists():
         messages.error(
             request,
