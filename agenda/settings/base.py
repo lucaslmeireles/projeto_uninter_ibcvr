@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#71i5+9al**p$4@*b96rx9f@q7^8&+tjnr182te_(a6&9_srt9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.95.182.179']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,11 +83,8 @@ WSGI_APPLICATION = 'agenda.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'USER': 'adminuninter',
-        'PASSWORD': 'curs0Pyth0n@169',
-        'HOST': '127.0.0.1',
-        'NAME': 'uninter'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  BASE_DIR / 'db.sqlite3'
     }
 }
 
@@ -130,12 +127,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'templates/static')
 ]
+STATIC_ROOT = os.path.join('static')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 #TODO PRECISA COLOCAR TODOS OS NEGOCIOS DO EMAIL BACKEND E TBM COLOCAR O FILES PATH
 # DOS ARQUIVO DE UPLOAD PARA O EMAIL
 
