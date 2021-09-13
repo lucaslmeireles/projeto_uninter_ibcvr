@@ -4,17 +4,15 @@
 }
 
 body {
-    font-family: 'Robot', sans-serif;
-    background:
-    linear-gradient(0deg, rgba(151, 151, 151, 0.5), rgba(151, 151, 151, 0.5)),
-    url('imginicio.jpg');
-    background-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 
 }
 
 .nav-container {
     background: #6CCB6A;
     height: 55px;
+    width: 100%;
 }
 .logo{
     padding:0px;
@@ -27,14 +25,13 @@ body {
 .wrapper {
     width: 1200px;
     margin: 0 auto;
-    height: max-content;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: 100%;
 }
 
 nav ul{
@@ -58,53 +55,14 @@ nav ul{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
-.header-container {
 
-    align-items: center;
-}
-
-
-
-.body-image{
-    display: flex;
-
-}
 .body-content{
-    position: absolute;
+    background-color: rgb(186, 216, 186);
+    height: 650px;
+}
+
+.body-shape{
+    position: relative;
     top: 300px;
-    left: 425px;
-}
-
-@keyframes texto{
-    from{
-        font-size: 0px;
-    }
-    to{
-        font-size: 43px;
-    }
-}
-@keyframes texto1{
-    from{
-        color: #E5EAFA;
-    }
-    to{
-        color: #b9c4e6;
-    }
-}
-.body-heading{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 43px;
-    color: #093824;
-    text-align: center;
-    animation: texto 3s   ;
-}
-
-
-.body-subtitle{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    color: #b9c4e6;
-    text-align: center;
-    animation: texto1 3s   ;
-
+    left: 300px;
 }

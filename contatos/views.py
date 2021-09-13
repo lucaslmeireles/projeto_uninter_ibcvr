@@ -35,15 +35,6 @@ def adicionacontato(request):
     telefone = request.POST.get('telefone')
     email = request.POST.get('email')
     categoria = request.POST.get('categoria')
-    #TODO Pesquisar como colocar o numero de contatos cadastrados, e usuarios
-    # testar essa solucao 
-    # i=0
-    # for contato in Contato.objects.all():
-    #     i += 1
-    # for user in User.objects.all():
-    #     i += 1
-
-
 
     if len(telefone)< 9:
         messages.error(
@@ -100,7 +91,7 @@ def enviaemail(request):
         subject=assunto,
         body=mensagem,
         from_email=base.EMAIL_HOST_USER,
-        to=['lluciomeireles@gmail.com', 'llmeireles0015@gmail.com', 'acrmeireles@hotmail.com'], #TODO remover e colocar email_contato
+        to=email_contato, #TODO remover e colocar email_contato
         attachments=arquivos
     )
     if arquivos:
