@@ -1,0 +1,7 @@
+from agenda.settings import *
+
+DEBUG = True
+SECURE_PROXY_SSL_HEADER = None
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False

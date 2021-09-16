@@ -164,6 +164,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 try:
-    from agenda import local_settings
+    from agenda import base
 except ImportError:
     pass

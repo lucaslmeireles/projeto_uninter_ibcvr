@@ -9,60 +9,39 @@ body {
 
 }
 
-.nav-container {
-    background: #6CCB6A;
-    height: 55px;
-    width: 100%;
-}
-.logo{
-    padding:0px;
-    margin: 0px;
-}
-#imagem{
-    top: 0px;
-    padding-bottom: 15px;
-}
-.wrapper {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-nav {
+.nav{
+    height: 8vh;
     display: flex;
+    background-color: #6CCB6A;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
-}
 
-nav ul{
+}
+.items{
+    list-style: none;
     display: flex;
 }
 
-
-
-.nav-items li {
-    list-style: none;
-    position: 100px;
-    padding-bottom: 20px;
-    margin: 15px;
+.items li{
+    letter-spacing: normal;
+    padding: 10px ;
 }
-
-
-
-.nav-items li a{
-    color: black;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.items a{
     text-decoration: none;
+    color: black;
 }
 
-.body-content{
+
+main{
+
     background-color: rgb(186, 216, 186);
-    height: 650px;
+    height: 92vh;
+    margin: auto;
+
 }
 
-.body-shape{
-    position: relative;
-    top: 300px;
-    left: 300px;
+
+h1{
+    text-align: center;
+    vertical-align: middle;
 }

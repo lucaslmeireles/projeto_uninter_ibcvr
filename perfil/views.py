@@ -3,7 +3,7 @@ from django.core.validators import validate_email
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+import re
 
 # Create your views here.
 
@@ -17,6 +17,7 @@ def cadastro(request):
     senha = request.POST.get('senha')
     senha2 = request.POST.get('senha2')
 
+    usuariore = re.search(r' |[A-Z]|\/|\.|\-', usuario)
     if not nome or not sobrenome or not email or not usuario or not senha or not senha2:
         messages.error(
             request,
@@ -52,10 +53,10 @@ def cadastro(request):
             'O usuário deve ter mais de 6 caracteres'
         )
         return render(request, 'perfil/cadastro.html')
-    if usuario.isascii():
+    if usuariore:
         messages.error(
             request,
-            'O usuário não pode conter caractres especiais'
+            'O usuário não pode conter caracteres especiais'
         )
         return render(request, 'perfil/cadastro.html')
 

@@ -10,31 +10,24 @@
 </head>
 
 <body>
-    <div class="nav-container">
-        <div class="wrapper">
-            <nav>
-                <div class="logo">
-                    <img id=imagem src="{% static 'img/logo.png'%}" width="100px" alt="">
-                </div>
-                <ul class="nav-items">
-                    <li>
-                        <a href="{% url 'sobre'%}">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'login'%}">Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <nav class="nav">
+        <img class="img" src="{% static 'img/logo.png'%}" width="100px" alt="">
+        <ul class="items">
+            <li>
+                <a href="{% url 'sobre'%}">Sobre</a>
+            </li>
+            <li>
+                <a href="{% url 'login'%}">Login</a>
+            </li>
+        </ul>
+    </nav>
+<main>
+    <div class="teste">
+    <h1>Agenda IBCVR</h1>
     </div>
+    
+</main>
 
-    <div class='body-content'>
-        <div class="body-shape">
-            <div class="body-heading">
-                <h1>Agenda IBCVR</h1>
-            </div>
-        </div>
-
-    </div>
 </body>
+
 </html>
