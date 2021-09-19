@@ -15,7 +15,7 @@ def paginicio(request):
     return render(request, 'contatos/inicio.html')
 def sobre(request):
     #cria a pag sobre
-    return render(request, 'contatos/inicio.html')
+    return render(request, 'contatos/sobre.html')
 
 class PagInicialAgenda(LoginRequiredMixin, ListView):
     #cria a lista da agenda

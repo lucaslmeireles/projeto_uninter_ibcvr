@@ -31,7 +31,7 @@
 main{
 
     background-color: #DBD2E0;
-    height: 92vh;
+    height: 89.65vh;
     margin: auto;
 
 }
@@ -70,6 +70,26 @@ main{
     font-style: normal;
     font-weight: normal;
 }
+footer{
+    display: flex;
+    background-color: #DBD2E0;
+ 
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: right;
+    margin-left: 5px;
+}
+footer p {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
 
 @media (max-width:800px){
     .texto{

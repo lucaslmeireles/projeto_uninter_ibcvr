@@ -5,21 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'estilosobre.css'%}">
+    <link rel="stylesheet" href="{% static 'css/estilosobre.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+
     <title>Sobre</title>
 </head>
 <body>
-    <div class="body-image">
-        <div class="body-content">
-            <h1 class="body-heading">Projeto Agenda IBCVR</h1>
-            <h2 class="body-heading">Propósito do Projeto</h2>
-            <p class="body-text">.
-                Esse projeto foi criado da parceira do Ministério da Educação
-                Cristã e Lucas Meireles.O projeto trata-se de uma atividade extensionista
-                de proporcionar o acesso e manipulação de informações de forma mais pratica
-                
-            </p>
-        </div>
+    <nav class="nav">
+        <img class="img" src="{% static 'img/logo.png'%}" width="100px" alt="">
+        <ul class="items">
+            <li>
+                <a href="{% url 'sobre'%}">Sobre</a>
+            </li>
+            <li>
+                <a href="{% url 'login'%}">Login</a>
+            </li>
+        </ul>
+    </nav>
+<main>
+    <div class="div-imagem">
+        <img class="imagem" src="{% static 'img/imgdiv.png' %}" alt="">
     </div>
+
+    <h1 class="texto">Projeto 
+        Agenda</h1>
+    <p class=texto-para>
+        Uma inicativa de digitalizar e facilitar o acesso aos contatos dos
+        professores da IBCVR
+    </p>
+    
+</main>
+<footer>
+    <a href="https://github.com/lucaslmeireles/projeto_uninter_ibcvr">Acesse o repositório aqui.</a>
+    <p>Feito com <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg></span>
+         por Lucas.</p>
+</footer>
+
 </body>
 </html>
