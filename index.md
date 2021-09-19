@@ -1,13 +1,10 @@
-## Welcome to GitHub Pages
+## Bem Vindo
 
-You can use the [editor on GitHub](https://github.com/lucaslmeireles/projeto_uninter_ibcvr/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Este projeto foi feito com o intuito de ajudar o Ministério de Educação Cristã da Igreja Batista Central como forma de atividade extensionista proposta pela a faculdade.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Abordagem
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+A abordagem utilizado foi o Django com a linguaguem Python. O Django  é um framework robusto que tem diversas funções que auxiliam na construção de sites co
 ```markdown
 Syntax highlighted code block
 
