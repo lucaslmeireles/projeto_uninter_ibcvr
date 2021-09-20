@@ -100,12 +100,13 @@ def enviaemail(request):
     email.send()
     messages.success(request, 'Email enviado')
 
-    #TODO  COMO FAZER ESSE NEGOCIO EXIBiR UM VALOR BONITINHO DE CADA VEZ
-    messages.warning(
-        request,
-        'Não foi possivel enviar a mensagem para todo os contatos'
-        f'Contatos sem email {nao_tem_email}'
-    )
+    #TODO  COMO FAZER ESSE NEGOCIO EXIBiR UM VALOR BONITINHO DE CADA VEZ TBM O WARNING
+    if nao_tem_email:
+        messages.warning(
+            request,
+            'Não foi possivel enviar a mensagem para todos os contatos'
+            f'Contatos sem email {nao_tem_email}'
+        )
 
 
 
