@@ -80,7 +80,9 @@ def enviaemail(request):
             email_contato.append(contato.email)
         else:
             nao_tem_email.append(contato.nome)
-    
+    i = 0
+    for sem_email in nao_tem_email:
+        i += 1
 
     assunto = request.POST.get('assunto')
     mensagem = request.POST.get('mensagem')
@@ -115,7 +117,7 @@ def enviaemail(request):
     messages.warning(
         request,
         'Não foi possivel enviar a mensagem para todo os contatos'
-        f'Contatos sem email {nao_tem_email}'
+        f'Contatos sem email {sem_email}'
     )
 
 
